@@ -16,6 +16,17 @@ Route::get('/', function () {
 });
 
 Route::get('tests/test', 'TestController@index');
+
+//Route::get('contact/index', 'ContactFormController@index');
+
+// グループ化することで、上記ルーティングの「contact/」という部分をprefixで指定して省略できる
+// また、ユーザー認証できたら、各ページに飛ぶ流れになる
+Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function(){
+  Route::get('index', 'ContactFormController@index')->name('contact.index');
+});
+
+// Route::resource('contacts', 'ContactFormController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
