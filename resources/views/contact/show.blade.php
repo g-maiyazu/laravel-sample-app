@@ -27,7 +27,7 @@
                       @csrf
 
 
-                      <input class="btn btn-info" type="submit" value="登録する">        
+                      <input class="btn btn-info" type="submit" value="更新する">        
                     </form>
                 </div>
             </div>
