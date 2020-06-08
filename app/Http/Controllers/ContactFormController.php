@@ -29,7 +29,7 @@ class ContactFormController extends Controller
         $contacts = DB::table('contact_forms')
         ->select('id', 'your_name', 'title', 'created_at')
         ->orderBy('created_at', 'desc')
-        ->get();
+        ->paginate(20);
 
       // .前でフォルダ指定、.後にファイル名を指定
       // ⇒contactフォルダのindexファイル
